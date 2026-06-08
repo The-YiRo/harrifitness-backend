@@ -12,6 +12,7 @@ const app = express();
 // Middlewares globales (para aceptar peticiones del frontend)
 app.use(cors());
 app.use(express.json());
+app.use('/api/chat', require('./routes/chat'));
 
 //ruta de autenticacion
 app.use('/api/auth', require('./routes/auth'));
