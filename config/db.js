@@ -2,12 +2,11 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    // Intentamos conectar usando la variable de entorno
-    await mongoose.connect(process.env.MONGO_URI);
-    console.log('La conexion ha sido exitosa en la base de datos MongoDB');
+    await mongoose.connect("mongodb://127.0.0.1:27017/harrifitness");
+    console.log("¡Conexión exitosa a MongoDB Local!");
   } catch (error) {
-    console.error('Error de conexión:', error.message);
-    process.exit(1); // Detiene el servidor si falla la conexión
+    console.error("Error de conexión:", error.message);
+    process.exit(1);
   }
 };
 
